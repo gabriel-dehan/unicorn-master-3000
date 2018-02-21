@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221165131) do
+ActiveRecord::Schema.define(version: 20180221171107) do
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "author"
+    t.text "content"
+    t.integer "rating"
+    t.integer "unicorn_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["unicorn_id"], name: "index_reviews_on_unicorn_id"
+  end
 
   create_table "unicorns", force: :cascade do |t|
     t.string "name"

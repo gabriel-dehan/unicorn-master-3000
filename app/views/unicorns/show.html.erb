@@ -22,3 +22,15 @@
 
 <%= link_to 'Edit', edit_unicorn_path(@unicorn) %> |
 <%= link_to 'Back', unicorns_path %>
+
+<h1>Reviews</h1>
+<ul>
+<% @unicorn.reviews.each do |review| %>
+	<li>
+		<%= review.content %>
+		<%= "★" * review.rating %>
+	</li>
+
+<% end %>
+</ul>
+
