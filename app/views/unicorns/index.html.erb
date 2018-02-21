@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Unicorns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Horn type</th>
+      <th>Age</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @unicorns.each do |unicorn| %>
+      <tr>
+        <td><%= unicorn.name %></td>
+        <td><%= unicorn.color %></td>
+        <td><%= unicorn.horn_type %></td>
+        <td><%= unicorn.age %></td>
+        <td><%= link_to 'Show', unicorn %></td>
+        <td><%= link_to 'Edit', edit_unicorn_path(unicorn) %></td>
+        <td><%= link_to 'Destroy', unicorn, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Unicorn', new_unicorn_path %>

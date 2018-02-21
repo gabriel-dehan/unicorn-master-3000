@@ -1,0 +1,37 @@
+<%= form_with(model: unicorn, local: true) do |form| %>
+  <% if unicorn.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(unicorn.errors.count, "error") %> prohibited this unicorn from being saved:</h2>
+
+      <ul>
+      <% unicorn.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :unicorn_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color, id: :unicorn_color %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horn_type %>
+    <%= form.text_field :horn_type, id: :unicorn_horn_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age, id: :unicorn_age %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

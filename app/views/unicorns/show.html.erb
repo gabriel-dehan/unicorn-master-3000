@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @unicorn.name %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @unicorn.color %>
+</p>
+
+<p>
+  <strong>Horn type:</strong>
+  <%= @unicorn.horn_type %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @unicorn.age %>
+</p>
+
+<%= link_to 'Edit', edit_unicorn_path(@unicorn) %> |
+<%= link_to 'Back', unicorns_path %>
